@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE app</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <center>
+            <h1>{{ message }}</h1>
+            <p>{{ giorno }}</p>
+            <p>{{ mese }}</p>
+            <p>{{ anno }}</p>
+        </center>
+        <template v-if="giorno === 16 && mese === 2">
+            <b v-bind:class="[{c: vero},cc]">BUON COMPLEANNO</b>
+            <div v-if="mese != 2"><b>FELICE CARNEVALE</b></div>
+        </template>
+        <template v-else><b>RITENTA AMICO</b></template>
+    
+        <div v-if="age >= 18"v-bind:class="[{c: vero},cc]">maggio</div>
+<hr/>
+<input v-on:keyup.a="keyup()"></input> <hr/>
+{{ nome }}
+<input v-model="nome"></input>
+<button @click="nome = 'DANIELE'">CHANGE</button>
+<p>{{number}}</p>
+{{ limite }}
+<img v-bind:src="dataIMG"/>
+<button :disabled="disabledB" v-on:click="aumenta">INCREMENTA</button>
+<button v-on:click="decrementa">Decrementa</button>
+<button v-on:click="alert">Alert</button>
+<div v-html="variabilepersonale"></div>
+    </div> 
+        <script src="main.js"></script>
+</body>
+</html>

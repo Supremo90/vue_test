@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE app2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app2">
+        <center>
+            <h1 ref="titolo">{{ message }}</h1>
+            <button @click="change">CHANGE TITLE</button>
+        </center>
+    </div> 
+    <hr/>
+    
+        <script src="main.js"></script>
+
+        <script>
+            //////////////////////////////
+            var app2 = new Vue({
+                el: '#app2',
+                data: {
+                    message: 'Hello Vue!',
+            },
+            methods: {
+                change:function(){
+                   // app3.change();
+                   app2.$refs.titolo.innerText = "Titolo cambiato"//ref è una sorta di documentID
+                }
+            }
+            })
+
+ 
+            
+///////////////////////
+            /*var app3 = new Vue({
+                el: '#app3',
+                data: {
+                    message: 'Hello TEXT!',
+            },
+            methods: {
+                change:function(){
+                    this.message = "CHANGED 444";
+                }
+            }
+            })
+*/
+
+
+
+        </script>
+</body>
+</html>
